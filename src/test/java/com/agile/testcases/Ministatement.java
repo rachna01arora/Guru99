@@ -12,6 +12,10 @@ public void ministatementtest(){
 	Displayaccuntlist();
 	verifresetyaccount();
 	verifyaccount();
-	verifyalert();
+	//verifyalert();
+	verifytransactionid();
+	verifyminstattext();
+	clickcontinue();
+	verifyreturnpage();
 }
 }

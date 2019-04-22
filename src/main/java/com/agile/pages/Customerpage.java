@@ -9,8 +9,6 @@ import com.agile.utilities.GenericAppMethods;
 public class Customerpage extends GenericAppMethods {
 	WebDriver driver;
 	
-	
-
 	public void verifypagetitle(){
 		verifytitle("Guru99 Bank Customer HomePage");	
 	}

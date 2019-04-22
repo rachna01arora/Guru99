@@ -24,7 +24,10 @@ public void verifytext(String expected, WebElement Ele){
 		}
 		else{
 			takeSnap();
-			System.out.println("page text"+" "+ expected +"is not correct");	
+			
+			System.out.println("page text"+" "+ expected +"is not correct");
+			
+			
 		}		
 	}
 		

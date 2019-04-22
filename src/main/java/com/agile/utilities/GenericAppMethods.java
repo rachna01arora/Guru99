@@ -9,6 +9,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriverException;
@@ -130,6 +131,19 @@ public void verifytext(String expected, String Actual){
 			System.out.println("page text"+" "+ expected +" is not correct");	
 		}		
 	}
+
+public void verifyalert(String alertexpectedtext){
+	
+	Alert alert=driver.switchTo().alert();
+	String alertactualtext="You Have Succesfully Logged Out!!";
+			if(alertactualtext.contentEquals(alertexpectedtext)){
+				System.out.println("Alert text displaying is correct");
+			}
+			else{
+				System.out.println("Alert text displaying is not correct");
+			}
+			alert.accept();
+}
 
 public void close(){
 	driver.close();

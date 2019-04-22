@@ -3,6 +3,7 @@ package com.agile.pages;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -37,8 +38,32 @@ locateElement("xpath","//input[@value='Submit']").click();
 System.out.println("all the values are successfully submit");
 }
 
-public void verifyalert(){
-	//Alert("You are not authorize to generate statement of this Account!!");
+public void verifytransactionid(){
+	List<WebElement> elements = GenericAppMethods.driver.findElements(By.xpath("//table[@border='1']//tbody//tr//td"));
+	for(int i=0; i<elements.size(); i++){	
+		WebElement value=elements.get(i);
+		String textvalue=value.getText();
+		System.out.println("value of all the rows are "+ textvalue);
+	}
 }
 
+public void verifyminstattext(){
+	verifytext("Last Three Transaction Details for Account No: 3308","//p[@class='heading3']");	
 }
+public void clickcontinue(){
+	locateElement("xpath", "//*[text()='Continue']").click();
+}
+
+public void verifyreturnpage(){
+	String expected="http://demo.guru99.com/Agile_Project/Agi_V1/customer/Customerhomepage.php";
+	String actual=GenericAppMethods.driver.getCurrentUrl();
+	if(actual.contentEquals(expected)){
+		System.out.println("It has returned to customer homepage");
+	}
+	else{
+		System.out.println("It has not returned to customer homepage");
+	}
+}
+}
+
+
